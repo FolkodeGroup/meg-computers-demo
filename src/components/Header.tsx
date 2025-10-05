@@ -19,7 +19,7 @@ export const Header: React.FC = () => {
           <Link to="/" className="flex items-center space-x-2">
             <img src="/assets/logomeg.webp" alt="MEG Computers Logo" className="h-10 w-auto" />
             <div className="flex flex-col leading-tight">
-              <span className="font-bold text-2xl text-primary">Meg</span>
+              <span className="font-bold text-2xl text-primary text-center">MEG</span>
               <span className="text-sm text-neutral">Computers</span>
             </div>
           </Link>
@@ -67,29 +67,29 @@ export const Header: React.FC = () => {
               className="md:hidden bg-dark/95 backdrop-blur-md border-t border-primary/20 overflow-hidden"
             >
               <nav className="py-4 space-y-4">
-                <Link 
-                  to="/" 
+                <Link
+                  to="/"
                   className="block px-4 py-2 text-neutral hover:text-primary transition-colors"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Inicio
                 </Link>
-                <Link 
-                  to="/productos" 
+                <Link
+                  to="/productos"
                   className="block px-4 py-2 text-neutral hover:text-primary transition-colors"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Productos
                 </Link>
-                <Link 
-                  to="/nosotros" 
+                <Link
+                  to="/nosotros"
                   className="block px-4 py-2 text-neutral hover:text-primary transition-colors"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Nosotros
                 </Link>
-                <Link 
-                  to="/contacto" 
+                <Link
+                  to="/contacto"
                   className="block px-4 py-2 text-neutral hover:text-primary transition-colors"
                   onClick={() => setIsMenuOpen(false)}
                 >

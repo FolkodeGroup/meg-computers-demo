@@ -10,31 +10,31 @@ import type { Product } from '../types/product';
 export const Home: React.FC = () => {
   const { addToCart } = useCart();
   const [selectedProduct, setSelectedProduct] = React.useState<Product | null>(null);
-  
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-80 md:h-[400px] overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('/assets/meg.webp')" }}
+      <section className="relative h-80 md:h-[600px] overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center "
+          style={{ backgroundImage: "url('/assets/meg_hero.png')" }}
         ></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/50 to-transparent"></div>
-        
+        <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/20 to-transparent"></div>
+
         {/* Decorative brush strokes */}
         <div className="absolute top-10 left-10 w-32 h-32 brush-overlay"></div>
         <div className="absolute bottom-10 right-10 w-40 h-40 brush-overlay transform rotate-180"></div>
       </section>
 
       {/* Hero Text Section */}
-      <section className="container mx-auto px-4 text-center relative z-10 pt-16 pb-8">
+      <section className="container mx-auto px-4 text-center relative z-10 pt-8 pb-8">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="text-4xl md:text-6xl font-bold mb-12 section-title pb-4">Repuestos Mayoristas</h1>
-          <p className="text-xl md:text-2xl text-neutral/90 mb-8 max-w-3xl mx-auto">Encuentra los mejores repuestos para celulares con stock garantizado</p>
+          <h1 className="text-4xl md:text-6xl font-bold mb-12 section-title ">Repuestos Mayoristas</h1>
+          <p className="text-xl md:text-2xl text-neutral/90 mb-4 max-w-3xl mx-auto">Encuentra los mejores repuestos para celulares con stock garantizado</p>
           <Link to="/productos" className="inline-block px-8 py-4 bg-primary text-dark rounded-lg font-bold text-lg hover:bg-primary/90 transition-colors glow-effect">
             Explorar productos
           </Link>
@@ -49,6 +49,7 @@ export const Home: React.FC = () => {
             products={products.slice(0, 4)}
             onCardClick={setSelectedProduct}
           />
+
           <div className="text-center mt-10">
             <Link
               to="/productos"
@@ -86,7 +87,7 @@ export const Home: React.FC = () => {
         </div>
       </section>
 
-      <ProductModal 
+      <ProductModal
         isOpen={!!selectedProduct}
         product={selectedProduct}
         onClose={() => setSelectedProduct(null)}
