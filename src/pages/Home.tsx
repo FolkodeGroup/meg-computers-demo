@@ -2,8 +2,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { products } from '../data/products';
-import { ProductCard } from '../components/ProductCard';
 import { ProductModal } from '../components/ProductModal';
+import { FeaturedCarousel } from '../components/FeaturedCarousel';
 import { useCart } from '../hooks/useCart';
 import type { Product } from '../types/product';
 
@@ -45,16 +45,10 @@ export const Home: React.FC = () => {
       <section className="pt-8 pb-12 md:pb-16">
         <div className="container mx-auto px-4">
           <h2 className="section-title">Productos Destacados</h2>
-
-          <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-6">
-            {products.slice(0, 8).map((product) => (
-              <ProductCard
-                key={product.id}
-                product={product}
-                onCardClick={setSelectedProduct}
-              />
-            ))}
-          </div>
+          <FeaturedCarousel
+            products={products.slice(0, 4)}
+            onCardClick={setSelectedProduct}
+          />
 
           <div className="text-center mt-10">
             <Link
